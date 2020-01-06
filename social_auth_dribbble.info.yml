@@ -1,0 +1,8 @@
+name: Social Auth Dribbble
+type: module
+description: 'Social Auth integration for Dribbble.'
+package: Social
+core: 8.x
+configure: social_auth_dribbble.settings_form
+dependencies:
+  - social_auth:social_auth

@@ -1,0 +1,7 @@
+services:
+  social_auth_dribbble.manager:
+    class: Drupal\social_auth_dribbble\DribbbleAuthManager
+    arguments:
+      - '@config.factory'
+      - '@logger.factory'
+      - '@request_stack'

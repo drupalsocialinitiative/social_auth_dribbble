@@ -1,0 +1,27 @@
+social_auth_dribbble.redirect_to_dribbble:
+  path: 'user/login/dribbble'
+  defaults:
+    _controller: '\Drupal\social_auth_dribbble\Controller\DribbbleAuthController::redirectToProvider'
+  requirements:
+    # Anonymous users can log in, but authenticated users can also associate a new provider
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+social_auth_dribbble.callback:
+  path: 'user/login/dribbble/callback'
+  defaults:
+    _controller: '\Drupal\social_auth_dribbble\Controller\DribbbleAuthController::callback'
+  requirements:
+    # Anonymous users can log in, but authenticated users can also associate a new provider
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
+
+social_auth_dribbble.settings_form:
+  path: 'admin/config/social-api/social-auth/dribbble'
+  defaults:
+    _title: 'Social Auth Dribbble settings'
+    _form: '\Drupal\social_auth_dribbble\Form\DribbbleAuthSettingsForm'
+  requirements:
+    _permission: 'administer social api authentication'
