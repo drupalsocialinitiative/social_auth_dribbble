@@ -1,8 +1,8 @@
-1<?php
+<?php
 
 namespace Drupal\Tests\social_auth_dribbble\Functional;
 
-use Drupal\social_api\SocialApiSettingsFormBaseTest;
+use Drupal\Tests\social_auth\Functional\SocialAuthTestBase;
 
 /**
  * Test Social Auth Dribbble settings form.
@@ -11,7 +11,7 @@ use Drupal\social_api\SocialApiSettingsFormBaseTest;
  *
  * @ingroup social_auth_dribbble
  */
-class SocialAuthDribbbleSettingsFormTest extends SocialApiSettingsFormBaseTest {
+class SocialAuthDribbbleSettingsFormTest extends SocialAuthTestBase {
   /**
    * Modules to enable.
    *
