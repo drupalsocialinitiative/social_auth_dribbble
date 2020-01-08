@@ -62,7 +62,7 @@ class DribbbleAuthManager extends OAuth2Manager {
    */
   public function getAuthorizationUrl() {
 
-    $scopes = ['public'];
+    $scopes = [];
 
     $extra_scopes = $this->getScopes();
     if ($extra_scopes) {
@@ -105,3 +105,4 @@ class DribbbleAuthManager extends OAuth2Manager {
   }
 
 }
+
