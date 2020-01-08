@@ -105,4 +105,3 @@ class DribbbleAuthManager extends OAuth2Manager {
   }
 
 }
-
