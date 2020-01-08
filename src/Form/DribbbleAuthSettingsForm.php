@@ -2,56 +2,14 @@
 
 namespace Drupal\social_auth_dribbble\Form;
 
-use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Path\PathValidatorInterface;
-use Drupal\Core\Routing\RequestContext;
-use Drupal\Core\Routing\RouteProviderInterface;
+use Drupal\Core\Url;
 use Drupal\social_auth\Form\SocialAuthSettingsForm;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Settings form for Social Auth Dribbble.
  */
 class DribbbleAuthSettingsForm extends SocialAuthSettingsForm {
-
-  /**
-   * The request context.
-   *
-   * @var \Drupal\Core\Routing\RequestContext
-   */
-  protected $requestContext;
-
-  /**
-   * Constructor.
-   *
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-   *   The configuration factory.
-   * @param \Drupal\Core\Routing\RouteProviderInterface $route_provider
-   *   Used to check if route exists.
-   * @param \Drupal\Core\Path\PathValidatorInterface $path_validator
-   *   Used to check if path is valid and exists.
-   * @param \Drupal\Core\Routing\RequestContext $request_context
-   *   Holds information about the current request.
-   */
-  public function __construct(ConfigFactoryInterface $config_factory, RouteProviderInterface $route_provider, PathValidatorInterface $path_validator, RequestContext $request_context) {
-    parent::__construct($config_factory, $route_provider, $path_validator);
-    $this->requestContext = $request_context;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    // Instantiates this class.
-    return new static(
-    // Load the services required to construct this class.
-      $container->get('config.factory'),
-      $container->get('router.route_provider'),
-      $container->get('path.validator'),
-      $container->get('router.request_context')
-    );
-  }
 
   /**
    * {@inheritdoc}
@@ -104,7 +62,7 @@ class DribbbleAuthSettingsForm extends SocialAuthSettingsForm {
       '#disabled' => TRUE,
       '#title' => $this->t('Valid redirect URIs'),
       '#description' => $this->t('Copy this value to <em>Valid redirect URIs</em> field of your Dribbble App settings.'),
-      '#default_value' => $GLOBALS['base_url'] . '/user/login/dribbble/callback',
+      '#default_value' => Url::fromRoute('social_auth_dribbble.callback')->setAbsolute()->toString(),
     ];
 
     $form['dribbble_settings']['advanced'] = [
@@ -117,8 +75,8 @@ class DribbbleAuthSettingsForm extends SocialAuthSettingsForm {
       '#type' => 'textarea',
       '#title' => $this->t('Scopes'),
       '#default_value' => $config->get('scopes'),
-      '#description' => $this->t('Define any additional scopes to be requested, separated by a comma (e.g: public, upload).<br>
-                                  The scopes \'public\' is added by default and always requested if no scope is provided.<br>
+      '#description' => $this->t('Define any additional scopes to be requested, separated by a comma (e.g: write, upload).<br>
+                                  The scope \'public\' is added by default and always requested.<br>
                                   You can see the full list of valid scopes and their description <a href="@scopes">here</a>.', ['@scopes' => 'https://developer.dribbble.com/v2/oauth/#scopes']),
     ];
 
@@ -151,3 +109,4 @@ class DribbbleAuthSettingsForm extends SocialAuthSettingsForm {
   }
 
 }
+
