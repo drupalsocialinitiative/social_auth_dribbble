@@ -75,7 +75,7 @@ class DribbbleAuthSettingsForm extends SocialAuthSettingsForm {
       '#type' => 'textarea',
       '#title' => $this->t('Scopes'),
       '#default_value' => $config->get('scopes'),
-      '#description' => $this->t('Define any additional scopes to be requested, separated by a comma (e.g: write, upload).<br>
+      '#description' => $this->t('Define any additional scopes to be requested, separated by a comma (e.g: write,upload).<br>
                                   The scope \'public\' is added by default and always requested.<br>
                                   You can see the full list of valid scopes and their description <a href="@scopes">here</a>.', ['@scopes' => 'https://developer.dribbble.com/v2/oauth/#scopes']),
     ];
