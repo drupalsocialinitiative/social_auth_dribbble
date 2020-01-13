@@ -76,7 +76,7 @@ class DribbbleAuthController extends OAuth2ControllerBase {
       return $redirect;
     }
 
-    /* @var \CrewLabs\OAuth2\Client\Provider\DribbbleResourceOwner|null $profile */
+    /** @var \CrewLabs\OAuth2\Client\Provider\DribbbleResourceOwner|null $profile */
     $profile = $this->processCallback();
 
     // If authentication was successful.
@@ -89,6 +89,7 @@ class DribbbleAuthController extends OAuth2ControllerBase {
                                                         $profile->getAvatarUrl(),
                                                         $profile->getId(),
                                                         $this->providerManager->getAccessToken(),
+                                                        $profile->getShotsUrl(),
                                                         $data);
     }
 
