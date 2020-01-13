@@ -85,8 +85,9 @@ class DribbbleAuthSettingsForm extends SocialAuthSettingsForm {
       '#title' => $this->t('Endpoints'),
       '#default_value' => $config->get('endpoints'),
       '#description' => $this->t('Define the Endpoints to be requested when user authenticates with Dribbble for the first time<br>
+                                  Enter each endpoint in different lines in the format <em>endpoint</em>|<em>name_of_endpoint</em>.<br>
                                   <b>For instance:</b><br>
-                                  /user/shots'),
+                                  /user/shots|user_shots'),
     ];
 
     return parent::buildForm($form, $form_state);
