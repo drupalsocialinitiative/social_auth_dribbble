@@ -80,7 +80,7 @@ class DribbbleAuthManager extends OAuth2Manager {
    */
   public function requestEndPoint($method, $path, $domain = NULL, array $options = []) {
     if (!$domain) {
-      $domain = 'https://api.dribbble.com';
+      $domain = 'https://api.dribbble.com/v2';
     }
     $url = $domain . $path;
 
