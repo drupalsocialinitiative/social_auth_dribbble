@@ -86,10 +86,10 @@ class DribbbleAuthController extends OAuth2ControllerBase {
       $data = $this->userAuthenticator->checkProviderIsAssociated($profile->getId()) ? NULL : $this->providerManager->getExtraDetails();
 
       return $this->userAuthenticator->authenticateUser($profile->getName(),
-                                                        $profile->getAvatarUrl(),
+                                                        $profile->getEmail(),
                                                         $profile->getId(),
                                                         $this->providerManager->getAccessToken(),
-                                                        $profile->getShotsUrl(),
+                                                        $profile->getAvatarUrl(),
                                                         $data);
     }
 
