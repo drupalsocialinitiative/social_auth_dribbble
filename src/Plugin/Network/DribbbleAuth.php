@@ -42,7 +42,7 @@ class DribbbleAuth extends NetworkBase implements DribbbleAuthInterface {
       throw new SocialApiException(sprintf('The Dribbble Library for the League OAuth not found. Class: %s.', $class_name));
     }
 
-    /* @var \Drupal\social_auth_dribbble\Settings\DribbbleAuthSettings $settings */
+    /** @var \Drupal\social_auth_dribbble\Settings\DribbbleAuthSettings $settings */
     $settings = $this->settings;
 
     if ($this->validateConfig($settings)) {
