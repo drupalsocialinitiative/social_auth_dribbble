@@ -29,7 +29,7 @@ class DribbbleAuthManager extends OAuth2Manager {
 
     parent::__construct($configFactory->get('social_auth_dribbble.settings'),
                         $logger_factory,
-                        $request_stack->getCurrentRequest());
+                        $this->request = $request_stack->getCurrentRequest());
   }
 
   /**
