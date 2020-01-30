@@ -92,3 +92,4 @@ MAINTAINERS
 
 Current maintainers:
  * Neel Gopaul (neel24) - https://www.drupal.org/u/neel24
+ * Getulio Valentin Sánchez (gvso) - https://www.drupal.org/u/gvso
