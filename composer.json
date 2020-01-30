@@ -1,7 +1,7 @@
 {
-    "name": "neel24/social_auth_mailchimp",
+    "name": "neel24/social_auth_dribbble",
     "type": "drupal-module",
-    "description": "Social Auth integration for MailChimp.",
+    "description": "Social Auth integration for Dribbble.",
     "keywords": ["Drupal"],
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
