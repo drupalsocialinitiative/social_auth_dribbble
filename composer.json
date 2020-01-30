@@ -1,5 +1,5 @@
 {
-    "name": "neel24/social_auth_dribbble",
+    "name": "drupal/social_auth_dribbble",
     "type": "drupal-module",
     "description": "Social Auth integration for Dribbble.",
     "keywords": ["Drupal"],
