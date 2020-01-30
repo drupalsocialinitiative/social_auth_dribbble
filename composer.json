@@ -4,7 +4,12 @@
     "description": "Social Auth integration for Dribbble.",
     "keywords": ["Drupal"],
     "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/social_auth_dribbble",
     "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/social_auth_dribbble",
+        "source": "https://git.drupalcode.org/project/social_auth_dribbble"
+    },
     "require": {
         "bymayo/oauth2-dribbble": "^1.0",
         "drupal/social_auth": "^2.0"
