@@ -20,4 +20,3 @@ function social_auth_dribbble_install() {
 function social_auth_dribbble_uninstall() {
   SocialAuthController::deleteLoginButtonSettings('social_auth_dribbble');
 }
-
