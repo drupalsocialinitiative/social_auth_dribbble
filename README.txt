@@ -66,10 +66,10 @@ You can also add a button or link anywhere on the site that points
 to /user/login/dribbble, so theming and customizing the button or link
 is very flexible.
 
-After Dribbble has returned the user to your site, the module compares the user id
-provided by Dribbble. If the user has previously registered using Dribbble, the user
-is logged in. If not, a new user account is created. Also, a Dribbble account can
-be associated with an authenticated user.
+After Dribbble has returned the user to your site, the module compares the
+user id provided by Dribbble. If the user has previously registered using
+Dribbble, the user is logged in. If not, a new user account is created.
+Also, a Dribbble account can be associated with an authenticated user.
 
 
 SUPPORT REQUESTS
